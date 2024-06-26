@@ -13,5 +13,6 @@ echo "Sleeping 10s to wait for mongo to start up"
 sleep 10
 
 java -Xmx$xmx -XX:+UseConcMarkSweepGC -XX:+PrintGCDetails -Xloggc:./gc.log \
- -XX:+PrintGCDateStamps -XX:+CMSParallelRemarkEnabled -XX:ReservedCodeCacheSize=256m \
+ -XX:+PrintGCDateStamps -XX:+CMSParallelRemarkEnabled -XX:ReservedCodeCacheSize=512m \
+ -Xms1g -Xmx3g -XX:MaxMetaspaceSize=512m \
  -XX:+CMSScavengeBeforeRemark -jar target/troneventquery-1.0.0-SNAPSHOT.jar
