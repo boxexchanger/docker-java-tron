@@ -1,10 +1,16 @@
-version: '3.1'
+x-logging:
+  &default-logging
+  driver: "json-file"
+  options:
+    max-file: "1"
+    max-size: "100m"
 
 services:
   tron-mongodb:
     container_name: tron-mongodb
     image: mongo:4.4
     restart: always
+    logging: *default-logging
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_INITDB_ROOT_USERNAME}
       MONGO_INITDB_ROOT_PASSWORD: ${MONGO_INITDB_ROOT_PASSWORD}
@@ -23,6 +29,7 @@ services:
         - JAVA_TRON_VERSION=${JAVA_TRON_VERSION:-GreatVoyage-v4.7.5}
     env_file:
       - ./tron.conf
+    logging: *default-logging
     environment:
       NETWORK: mainnet
       VM_MAX_TIME_RATIO: 20.0
@@ -60,6 +67,7 @@ services:
       DB_PASSWORD: ${DB_PASSWORD}
     ports:
       - 127.0.0.1:8080:8080
+    logging: *default-logging
     restart: always
     depends_on:
       - tron-node
@@ -68,6 +76,7 @@ services:
     container_name: tron-lifecycle-manager
     build:
       context: ./tron-lifecycle-manager/
+    logging: *default-logging
     environment:
       MONGO_HOST: tron-mongodb
       MONGO_DBNAME: eventlog
