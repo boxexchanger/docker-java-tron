@@ -30,7 +30,7 @@ fi
 echo "---"
 echo "Initializing storage..."
 
-mkdir -p ./data/mongod
+mkdir -p ./data/mongo
 mkdir -p ./data/node
 
 echo "---"
