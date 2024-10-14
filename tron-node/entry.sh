@@ -1,6 +1,6 @@
 #!/bin/bash
 
-CONFIG_FILE=/etc/tron/mainnet_config.conf
+CONFIG_FILE=/etc/tron/nile_config.conf
 CONFIG_P2P_PORT=18888
 CONFIG_FULL_NODE_PORT=8090
 CONFIG_SOLIDITY_NODE_PORT=8091
@@ -23,21 +23,9 @@ CONFIG_CONTRACT_ADDRESS_FILTER="\"\""
 CONFIG_CONTRACT_TOPIC_FILTER="\"\""
 RPC_FULL_NODE=8545
 RPC_SOLIDITY_NODE=8555
-NETWORK="nile"
 ES_FLAG=""
 WITNESS_FLAG=""
 
-if [[ -z "${NETWORK}" ]] || [[ "${NETWORK}" == "mainnet" ]]; then
-  # Network set to mainnet
-  :
-elif [[ "${NETWORK}" == "nile" ]]; then
-  # Network set to nile
-  CONFIG_FILE=/etc/tron/nile_config.conf
-  :
-else
-  echo "Invalid NETWORK: ${NETWORK}. Must be one of: \"mainnet\", \"nile\""
-  exit 1
-fi
 
 if [[ -z "${WITNESS_MODE}" ]] || [[ "${WITNESS_MODE}" == "false" ]]; then
   # Witness mode disabled
