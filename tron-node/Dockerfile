@@ -1,4 +1,5 @@
 ARG JAVA_TRON_VERSION=latest
+ARG NETWORK=nile
 
 FROM openjdk:8-jdk AS build-plugin
 
