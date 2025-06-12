@@ -26,7 +26,7 @@ services:
     build:
       context: ./tron-node/
       args:
-        - JAVA_TRON_VERSION=${JAVA_TRON_VERSION:-GreatVoyage-v4.7.6}
+        - JAVA_TRON_VERSION=${JAVA_TRON_VERSION:-GreatVoyage-v4.8.0}
     env_file:
       - ./tron.conf
     logging: *default-logging
