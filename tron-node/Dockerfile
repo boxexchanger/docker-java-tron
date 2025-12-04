@@ -1,6 +1,6 @@
 ARG JAVA_TRON_VERSION=latest
 
-FROM openjdk:8-jdk AS build-plugin
+FROM ibm-semeru-runtimes:open-8-jdk-noble AS build-plugin
 
 WORKDIR /src
 RUN git clone --depth 1 https://github.com/tronprotocol/event-plugin.git
