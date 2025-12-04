@@ -1,6 +1,6 @@
 ARG JAVA_TRON_VERSION=latest
 
-FROM ibm-semeru-runtimes:open-8-jdk-noble AS build-plugin
+FROM azul/zulu-openjdk:8u472 AS build-plugin
 
 WORKDIR /src
 RUN apt-get update && \
