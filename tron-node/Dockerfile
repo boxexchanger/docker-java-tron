@@ -3,6 +3,9 @@ ARG JAVA_TRON_VERSION=latest
 FROM ibm-semeru-runtimes:open-8-jdk-noble AS build-plugin
 
 WORKDIR /src
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends git ca-certificates && \
+    rm -rf /var/lib/apt/lists/*
 RUN git clone --depth 1 https://github.com/tronprotocol/event-plugin.git
 
 RUN cd event-plugin && \
