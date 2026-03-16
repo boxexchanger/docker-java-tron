@@ -1,7 +1,7 @@
 ARG JAVA_TRON_VERSION=latest
 ARG NETWORK=nile
 
-FROM openjdk:8-jdk AS build-plugin
+FROM azul/zulu-openjdk:8u472 AS build-plugin
 
 WORKDIR /src
 RUN git clone --depth 1 https://github.com/tronprotocol/event-plugin.git
