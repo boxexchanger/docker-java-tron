@@ -109,7 +109,7 @@ if [[ "${CONFIG_EVENT_PLUGIN_ENABLED}" == "true" ]]; then
       exit 1
     fi
 
-    CONFIG_EVENT_PLUGIN_PATH='\/usr\/local\/tron\/plugins\/plugin-mongodb-1.0.0.zip'
+    CONFIG_EVENT_PLUGIN_PATH='\/usr\/local\/tron\/plugins\/plugin-mongodb-3.0.0.zip'
     CONFIG_EVENT_PLUGIN_SERVER=${EVENT_PLUGIN_MONGO_SERVER}
     CONFIG_EVENT_PLUGIN_SERVER_AUTH="eventlog|${EVENT_PLUGIN_MONGO_DB_USERNAME}|${EVENT_PLUGIN_MONGO_DB_PASSWORD}"
 
